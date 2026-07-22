@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register | Stackly Creative Agency</title>
+  <meta name="description" content="Create your Stackly account."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #060a13;
+      color: #f1f5f9;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+    
+    .register-container {
+      width: 100%;
+      max-width: 460px;
+    }
+    
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+    .logo-icon-box {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #7c3aed, #5b21b6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 0.95rem;
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+    }
+    .logo-text-box {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+    }
+    
+    /* Progress indicators */
+    .steps-indicator {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+      align-items: center;
+    }
+    .step-pill {
+      height: 6px;
+      border-radius: 3px;
+      background: #111827;
+      transition: all 0.3s ease;
+    }
+    .step-pill.active {
+      width: 32px;
+      background: #6366f1;
+    }
+    .step-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #111827;
+      transition: all 0.3s ease;
+    }
+    .step-dot.active {
+      background: #6366f1;
+    }
+    
+    .page-title {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .page-title span {
+      background: linear-gradient(135deg, #6366f1, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .page-desc {
+      color: #64748b;
+      font-size: 0.88rem;
+      margin-bottom: 32px;
+    }
+    
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #94a3b8;
+      margin-bottom: 8px;
+    }
+    .form-input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: #f1f5f9;
+      font-family: inherit;
+      font-size: 0.88rem;
+      transition: all 0.2s ease;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: #6366f1;
+      background: rgba(255, 255, 255, 0.04);
+      box-shadow: 0 0 12px rgba(99, 102, 241, 0.15);
+    }
+    
+    /* Password Strength indicators */
+    .strength-bars {
+      display: flex;
+      gap: 6px;
+      margin-top: 8px;
+      margin-bottom: 24px;
+    }
+    .strength-bar {
+      flex: 1;
+      height: 4px;
+      border-radius: 2px;
+      background: #111827;
+      transition: background 0.3s;
+    }
+    .strength-bar.active {
+      background: #6366f1;
+    }
+    
+    .btn-continue {
+      width: 100%;
+      background: #6366f1;
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      padding: 14px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+    .btn-continue:hover {
+      background: #4f46e5;
+    }
+
+    /* Role Selection Grid */
+    .role-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+    .role-card-btn {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 18px 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      color: #94a3b8;
+    }
+    .role-card-btn:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+    .role-card-btn.active {
+      background: rgba(124, 58, 237, 0.08);
+      border-color: #7c3aed;
+      color: #a78bfa;
+      box-shadow: 0 0 16px rgba(124, 58, 237, 0.15);
+    }
+    .role-icon-box {
+      font-size: 1.4rem;
+    }
+    .role-lbl {
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .role-sub-lbl {
+      font-size: 0.6rem;
+      color: #475569;
+      text-align: center;
+    }
+    .role-card-btn.active .role-sub-lbl {
+      color: #8b5cf6;
+    }
+    
+    /* Welcome Splash State */
+    .welcome-splash {
+      text-align: center;
+      padding: 20px 0;
+      animation: fadeIn 0.5s ease;
+    }
+    .welcome-icon {
+      font-size: 4rem;
+      margin-bottom: 16px;
+      display: inline-block;
+      animation: bounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bounce {
+      0% { transform: scale(0.3); }
+      50% { transform: scale(1.05); }
+      70% { transform: scale(0.9); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="register-container">
+  
+  <!-- Header Logo -->
+  <div class="header-logo">
+    <div class="logo-icon-box">S</div>
+    <div class="logo-text-box">Stackly</div>
+  </div>
+  
+  <!-- ── STEP 1: Basic Details ── -->
+  <div id="step-1-section">
+    <div class="steps-indicator">
+      <div class="step-pill active" id="s1-pill"></div>
+      <div class="step-dot" id="s2-dot"></div>
+      <div class="step-dot" id="s3-dot"></div>
+    </div>
+    
+    <h1 class="page-title">Create Your <span>Account</span></h1>
+    <p class="page-desc">Get started for free — no credit card required.</p>
+    
+    <form id="register-form-step1" onsubmit="goToStep2(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">First Name *</label>
+          <input class="form-input" type="text" id="reg-fname" placeholder="Aarav" required/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Last Name *</label>
+          <input class="form-input" type="text" id="reg-lname" placeholder="Singh" required/>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label">Work Email *</label>
+        <input class="form-input" type="email" id="reg-email" placeholder="you@company.com" required/>
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label">Phone Number *</label>
+        <input class="form-input" type="tel" id="reg-phone" placeholder="+91 98765 43210" required/>
+      </div>
+      
+      <div class="form-group" style="margin-bottom: 8px;">
+        <label class="form-label">Password *</label>
+        <input class="form-input" type="password" id="reg-password" placeholder="Min. 8 characters" oninput="updateStrengthBars()" required/>
+      </div>
+      
+      <!-- Password Strength Indicator -->
+      <div class="strength-bars">
+        <div class="strength-bar" id="bar-1"></div>
+        <div class="strength-bar" id="bar-2"></div>
+        <div class="strength-bar" id="bar-3"></div>
+        <div class="strength-bar" id="bar-4"></div>
+      </div>
+      
+      <div style="margin-bottom: 24px;">
+        <label style="display: flex; align-items: flex-start; gap: 8px; cursor: pointer; font-size: 0.82rem; color: #64748b;">
+          <input type="checkbox" id="reg-terms" required style="accent-color: #6366f1; margin-top: 3px;"/>
+          <span>I agree to the <a href="error.html" style="color:#6366f1; text-decoration: none;">Terms of Service</a> and <a href="error.html" style="color:#6366f1; text-decoration: none;">Privacy Policy</a></span>
+        </label>
+      </div>
+      
+      <button type="submit" class="btn-continue">
+        Continue →
+      </button>
+    </form>
+    
+    <div style="text-align:center;margin-top:24px;font-size:0.82rem">
+      <span style="color:#64748b">Already have an account? </span>
+      <a href="login.html" style="color:#6366f1;text-decoration:none;font-weight:600">Sign In</a>
+    </div>
+  </div>
+
+  <!-- ── STEP 2: Role Selection ── -->
+  <div id="step-2-section" style="display: none;">
+    <div class="steps-indicator">
+      <div class="step-dot active" id="s1-dot-s2" style="width: 6px; border-radius: 50%;"></div>
+      <div class="step-pill active" id="s2-pill-s2" style="width: 32px; border-radius: 3px; background: #6366f1;"></div>
+      <div class="step-dot" id="s3-dot-s2"></div>
+    </div>
+    
+    <h1 class="page-title">Choose Your <span>Role</span></h1>
+    <p class="page-desc">Select the dashboard type that matches your project requirements.</p>
+    
+    <form id="register-form-step2" onsubmit="handleRegistrationComplete(event)">
+      <div class="role-grid">
+        <button type="button" class="role-card-btn" id="reg-btn-admin" onclick="selectRegRole('admin')">
+          <span class="role-icon-box">🛡️</span>
+          <span class="role-lbl">Admin</span>
+          <span class="role-sub-lbl">Platform Control</span>
+        </button>
+        <button type="button" class="role-card-btn" id="reg-btn-analyst" onclick="selectRegRole('analyst')">
+          <span class="role-icon-box">📊</span>
+          <span class="role-lbl">Analyst</span>
+          <span class="role-sub-lbl">Market Insight</span>
+        </button>
+        <button type="button" class="role-card-btn active" id="reg-btn-client" onclick="selectRegRole('client')">
+          <span class="role-icon-box">💼</span>
+          <span class="role-lbl">Client</span>
+          <span class="role-sub-lbl">My Portfolio</span>
+        </button>
+      </div>
+      
+      <div id="reg-error" style="display:none;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:10px;padding:12px;color:#ef4444;font-size:0.82rem;margin-bottom:16px"></div>
+      
+      <button type="submit" class="btn-continue">
+        Complete Registration ✦
+      </button>
+    </form>
+  </div>
+  
+  <!-- ── STEP 3: Success Welcome State ── -->
+  <div id="welcome-screen" class="welcome-splash" style="display:none">
+    <div class="welcome-icon">🎉</div>
+    <h2 class="page-title">Welcome to Stackly,<br/><span id="welcome-name">there</span>!</h2>
+    <p class="page-desc" style="margin-top: 10px; margin-bottom: 24px;">Your account has been created successfully. You can now access your portal dashboard.</p>
+    
+    <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 12px; padding: 16px; margin-bottom: 24px;">
+      <p style="color: #10b981; font-size: 0.88rem; font-weight: 500;">✓ Account created · ✓ Setup complete · ✓ Ready to go</p>
+    </div>
+    
+    <button onclick="goToDashboard()" class="btn-continue" style="background: linear-gradient(135deg, #6366f1, #7c3aed)">
+      Go to My Dashboard →
+    </button>
+  </div>
+  
+</div>
+
+<script src="js/main.js"></script>
+<script>
+// Auto-redirect removed to allow direct access to registration form anytime
+
+let currentRole = 'client'; // Default registered user role is client
+
+function updateStrengthBars() {
+  const password = document.getElementById('reg-password').value;
+  const bars = [
+    document.getElementById('bar-1'),
+    document.getElementById('bar-2'),
+    document.getElementById('bar-3'),
+    document.getElementById('bar-4')
+  ];
+  
+  // Clear classes
+  bars.forEach(b => b.classList.remove('active'));
+  
+  if (password.length >= 2) bars[0].classList.add('active');
+  if (password.length >= 5) bars[1].classList.add('active');
+  if (password.length >= 8) bars[2].classList.add('active');
+  if (password.length >= 10 && /[A-Z]/.test(password) && /[0-9]/.test(password)) bars[3].classList.add('active');
+}
+
+function goToStep2(e) {
+  e.preventDefault();
+  
+  const password = document.getElementById('reg-password').value;
+  if (password.length < 6) {
+    alert('Password must be at least 6 characters.');
+    return;
+  }
+  
+  // Switch visual screens
+  document.getElementById('step-1-section').style.display = 'none';
+  document.getElementById('step-2-section').style.display = 'block';
+}
+
+function selectRegRole(role) {
+  currentRole = role;
+  document.getElementById('reg-btn-admin').classList.toggle('active', role === 'admin');
+  document.getElementById('reg-btn-analyst').classList.toggle('active', role === 'analyst');
+  document.getElementById('reg-btn-client').classList.toggle('active', role === 'client');
+}
+
+function handleRegistrationComplete(e) {
+  e.preventDefault();
+  
+  const fname = document.getElementById('reg-fname').value.trim();
+  const lname = document.getElementById('reg-lname').value.trim();
+  const email = document.getElementById('reg-email').value.trim();
+  const password = document.getElementById('reg-password').value;
+  const fullName = fname + ' ' + lname;
+  
+  // Register in local memory
+  const users = JSON.parse(localStorage.getItem('sa_users') || '[]');
+  const existing = users.find(u => u.email === email);
+  if (!existing) {
+    users.push({ name: fullName, email, password, role: currentRole });
+    localStorage.setItem('sa_users', JSON.stringify(users));
+  }
+  
+  // Auto-login session creation
+  localStorage.setItem('sa_session', JSON.stringify({ name: fullName, email, role: currentRole }));
+  
+  // Show welcome screen (Step 3)
+  document.getElementById('step-2-section').style.display = 'none';
+  document.getElementById('welcome-name').textContent = fname;
+  document.getElementById('welcome-screen').style.display = 'block';
+}
+
+function goToDashboard() {
+  window.location.href = currentRole === 'admin' ? 'admin-dashboard.html' : 'client-dashboard.html';
+}
+</script>
+</body>
+</html>

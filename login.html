@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | Stackly Creative Agency</title>
+  <meta name="description" content="Sign in to your Stackly portal."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #060a13;
+      color: #f1f5f9;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .split-container {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      min-height: 100vh;
+    }
+    
+    /* ── LEFT PANEL ── */
+    .left-panel {
+      background: #090e1a;
+      padding: 60px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+    .left-panel::before {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.1), transparent 70%);
+      top: -100px;
+      left: -100px;
+      pointer-events: none;
+    }
+    .lp-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .lp-logo-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #7c3aed, #5b21b6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.2rem;
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+    }
+    .lp-logo-text {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+      background: linear-gradient(135deg, #f1f5f9, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .lp-content {
+      margin: 60px 0;
+    }
+    .lp-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .lp-title span {
+      background: linear-gradient(135deg, #06b6d4, #7c3aed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .lp-desc {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      max-width: 460px;
+      margin-bottom: 40px;
+    }
+    
+    /* Live Users Pills */
+    .user-pill {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 50px;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+      max-width: 480px;
+      transition: all 0.3s ease;
+    }
+    .user-pill:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.1);
+      transform: translateX(4px);
+    }
+    .up-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #0284c7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #fff;
+    }
+    .up-info {
+      flex-grow: 1;
+    }
+    .up-name {
+      font-weight: 600;
+      font-size: 0.88rem;
+    }
+    .up-name span {
+      color: #64748b;
+      font-weight: 400;
+    }
+    .up-desc {
+      color: #64748b;
+      font-size: 0.75rem;
+      margin-top: 2px;
+    }
+    .up-badge {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .up-badge.live {
+      background: rgba(16, 185, 129, 0.1);
+      color: #10b981;
+      border: 1px solid rgba(16, 185, 129, 0.2);
+    }
+    .up-badge.active {
+      background: rgba(6, 182, 212, 0.1);
+      color: #06b6d4;
+      border: 1px solid rgba(6, 182, 212, 0.2);
+    }
+    .dot-pulse {
+      width: 6px;
+      height: 6px;
+      background: currentColor;
+      border-radius: 50%;
+      box-shadow: 0 0 6px currentColor;
+    }
+
+    .lp-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .lp-stats {
+      display: flex;
+      gap: 40px;
+    }
+    .lp-stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .lp-stat-val {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #fff;
+    }
+    .lp-stat-lbl {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #475569;
+      margin-top: 4px;
+    }
+    .lp-secure {
+      font-size: 0.75rem;
+      color: #475569;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ── RIGHT PANEL ── */
+    .right-panel {
+      padding: 60px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .form-wrapper {
+      width: 100%;
+      max-width: 420px;
+    }
+    .rp-title {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .rp-desc {
+      color: #64748b;
+      font-size: 0.88rem;
+      margin-bottom: 30px;
+    }
+    
+    /* Role Selector */
+    .role-section-title {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #475569;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .role-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .role-card-btn {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 14px 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      color: #94a3b8;
+    }
+    .role-card-btn:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+    .role-card-btn.active {
+      background: rgba(124, 58, 237, 0.08);
+      border-color: #7c3aed;
+      color: #a78bfa;
+      box-shadow: 0 0 16px rgba(124, 58, 237, 0.15);
+    }
+    .role-icon-box {
+      font-size: 1.2rem;
+    }
+    .role-lbl {
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .role-sub-lbl {
+      font-size: 0.6rem;
+      color: #475569;
+      text-align: center;
+    }
+    .role-card-btn.active .role-sub-lbl {
+      color: #8b5cf6;
+    }
+
+    /* Social Signin */
+    .social-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .social-btn {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #94a3b8;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    .social-btn:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.1);
+      color: #f1f5f9;
+    }
+    
+    .divider {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #475569;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .divider:not(:empty)::before { margin-right: 12px; }
+    .divider:not(:empty)::after { margin-left: 12px; }
+
+    /* Inputs */
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: #94a3b8;
+      margin-bottom: 8px;
+    }
+    .form-input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: #f1f5f9;
+      font-family: inherit;
+      font-size: 0.88rem;
+      transition: all 0.2s ease;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: #7c3aed;
+      background: rgba(255, 255, 255, 0.04);
+      box-shadow: 0 0 12px rgba(124, 58, 237, 0.1);
+    }
+    .form-input::placeholder {
+      color: #475569;
+    }
+    
+    /* Submit btn */
+    .btn-submit {
+      width: 100%;
+      background: linear-gradient(135deg, #6366f1, #7c3aed);
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      padding: 14px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 10px;
+      transition: opacity 0.2s;
+    }
+    .btn-submit:hover {
+      opacity: 0.95;
+    }
+    
+    /* Demo Credentials */
+    .demo-creds {
+      background: rgba(255, 255, 255, 0.01);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 28px;
+    }
+    .dc-title {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #475569;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .dc-item {
+      font-size: 0.78rem;
+      color: #64748b;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .dc-item:last-child { margin-bottom: 0; }
+    .dc-item strong { color: #94a3b8; }
+    .dc-tag {
+      font-size: 0.62rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+    
+    /* Responsive styling */
+    @media (max-width: 950px) {
+      .split-container {
+        grid-template-columns: 1fr;
+      }
+      .left-panel {
+        display: none;
+      }
+      .right-panel {
+        padding: 40px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="split-container">
+  
+  <!-- ── LEFT PANEL ── -->
+  <div class="left-panel">
+    <!-- Header -->
+    <div class="lp-header">
+      <div class="lp-logo-icon">S</div>
+      <div class="lp-logo-text">STACKLY</div>
+    </div>
+    
+    <!-- Content -->
+    <div class="lp-content">
+      <h1 class="lp-title">Your <span>Creative</span> Dashboard Awaits</h1>
+      <p class="lp-desc">Select your role and access your personalized Stackly experience — real-time data, intelligent insights, and full control at your fingertips.</p>
+      
+      <!-- Users pills -->
+      <div class="user-pill">
+        <div class="up-avatar" style="background: linear-gradient(135deg, #7c3aed, #5b21b6)">AS</div>
+        <div class="up-info">
+          <div class="up-name">Arjun Sharma <span>— Admin</span></div>
+          <div class="up-desc">Managing active agency operations</div>
+        </div>
+        <div class="up-badge live">
+          <span class="dot-pulse"></span> Live
+        </div>
+      </div>
+      
+      <div class="user-pill">
+        <div class="up-avatar" style="background: linear-gradient(135deg, #06b6d4, #0891b2)">PN</div>
+        <div class="up-info">
+          <div class="up-name">Priya Nair <span>— Designer</span></div>
+          <div class="up-desc">Overseeing active client projects</div>
+        </div>
+        <div class="up-badge active">
+          <span class="dot-pulse"></span> Active
+        </div>
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="lp-footer">
+      <div class="lp-stats">
+        <div class="lp-stat-item">
+          <span class="lp-stat-val">2M+</span>
+          <span class="lp-stat-lbl">Users</span>
+        </div>
+        <div class="lp-stat-item">
+          <span class="lp-stat-val">99.99%</span>
+          <span class="lp-stat-lbl">Uptime</span>
+        </div>
+        <div class="lp-stat-item">
+          <span class="lp-stat-val">150+</span>
+          <span class="lp-stat-lbl">Countries</span>
+        </div>
+      </div>
+      <div class="lp-secure">
+        🛡️ Protected by 256-bit encryption &amp; biometric authentication
+      </div>
+    </div>
+  </div>
+  
+  <!-- ── RIGHT PANEL ── -->
+  <div class="right-panel">
+    <div class="form-wrapper">
+      <div style="text-align:center;margin-bottom:16px;display:none" class="mobile-logo-wrap">
+        <!-- Logo for mobile only -->
+      </div>
+      
+      <h2 class="rp-title">Welcome Back</h2>
+      <p class="rp-desc">Sign in to your Stackly account</p>
+      
+      <!-- Role Grid -->
+      <div class="role-section-title">Select Your Role</div>
+      <div class="role-grid">
+        <button type="button" class="role-card-btn active" id="btn-admin" onclick="selectRole('admin')">
+          <span class="role-icon-box">🛡️</span>
+          <span class="role-lbl">Admin</span>
+          <span class="role-sub-lbl">Platform Control</span>
+        </button>
+        <button type="button" class="role-card-btn" id="btn-analyst" onclick="selectRole('analyst')">
+          <span class="role-icon-box">📊</span>
+          <span class="role-lbl">Analyst</span>
+          <span class="role-sub-lbl">Market Insight</span>
+        </button>
+        <button type="button" class="role-card-btn" id="btn-client" onclick="selectRole('client')">
+          <span class="role-icon-box">💼</span>
+          <span class="role-lbl">Client</span>
+          <span class="role-sub-lbl">My Portfolio</span>
+        </button>
+      </div>
+      
+      <!-- Social Signin -->
+      <div class="social-row">
+        <a href="error.html" class="social-btn">
+          <img src="https://www.google.com/favicon.ico" width="16" height="16" alt=""/> Google
+        </a>
+        <a href="error.html" class="social-btn">
+          <img src="https://www.microsoft.com/favicon.ico" width="16" height="16" alt=""/> Microsoft
+        </a>
+      </div>
+      
+      <div class="divider">Or sign in with email</div>
+      
+      <!-- Form -->
+      <form id="login-form" onsubmit="handleLogin(event)">
+        <input type="hidden" id="selected-role" value="admin"/>
+        
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input class="form-input" type="email" id="login-email" placeholder="you@company.com" required/>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <div style="position:relative">
+            <input class="form-input" type="password" id="login-password" placeholder="••••••••" required style="padding-right:48px"/>
+            <button type="button" onclick="togglePassword('login-password')" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;color:#475569;cursor:pointer;font-size:1rem">👁</button>
+          </div>
+        </div>
+        
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px">
+          <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:0.82rem;color:#64748b">
+            <input type="checkbox" style="accent-color:#7c3aed"/> Remember me
+          </label>
+          <a href="error.html" style="color:#7c3aed;text-decoration:none;font-size:0.82rem">Forgot password?</a>
+        </div>
+        
+        <div id="login-error" style="display:none;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:10px;padding:12px;color:#ef4444;font-size:0.82rem;margin-bottom:16px"></div>
+        
+        <button type="submit" class="btn-submit">
+          Sign In to Dashboard →
+        </button>
+      </form>
+      
+      <div style="text-align:center;margin-top:20px;font-size:0.82rem">
+        <span style="color:#64748b">Don't have an account? </span>
+        <a href="register.html" style="color:#7c3aed;text-decoration:none;font-weight:600">Create one free →</a>
+      </div>
+      
+      <div style="text-align:center;margin-top:14px;font-size:0.7rem;color:#475569">
+        By continuing, you agree to our <a href="error.html" style="color:#64748b">Terms</a> and <a href="error.html" style="color:#64748b">Privacy Policy</a>
+      </div>
+      
+      <!-- Demo Credentials Hint Box -->
+      <div class="demo-creds">
+        <div class="dc-title">💡 Demo Credentials</div>
+        <div class="dc-item">
+          <span>Admin: <strong>admin@stackly.in</strong></span>
+          <span class="dc-tag">admin123</span>
+        </div>
+        <div class="dc-item">
+          <span>Analyst: <strong>analyst@stackly.in</strong></span>
+          <span class="dc-tag">analyst123</span>
+        </div>
+        <div class="dc-item">
+          <span>Client: <strong>client@stackly.in</strong></span>
+          <span class="dc-tag">client123</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<script src="js/main.js"></script>
+<script>
+// Auto-redirect removed to allow direct access to login form anytime
+
+function selectRole(role) {
+  document.getElementById('selected-role').value = role;
+  document.getElementById('btn-admin').classList.toggle('active', role === 'admin');
+  document.getElementById('btn-analyst').classList.toggle('active', role === 'analyst');
+  document.getElementById('btn-client').classList.toggle('active', role === 'client');
+}
+
+function togglePassword(id) {
+  const inp = document.getElementById(id);
+  inp.type = inp.type === 'password' ? 'text' : 'password';
+}
+
+function handleLogin(e) {
+  e.preventDefault();
+  const email    = document.getElementById('login-email').value.trim();
+  const password = document.getElementById('login-password').value;
+  const role     = document.getElementById('selected-role').value;
+  const errEl    = document.getElementById('login-error');
+
+  if (password.length < 6) {
+    errEl.textContent = 'Password must be at least 6 characters.';
+    errEl.style.display = 'block';
+    return;
+  }
+
+  errEl.style.display = 'none';
+
+  // Derive a friendly name from email
+  const emailPrefix = email.split('@')[0];
+  const name = emailPrefix
+    .replace(/[._\-]/g, ' ')
+    .replace(/\b\w/g, c => c.toUpperCase());
+
+  // Auto create user inside localStorage
+  const users = JSON.parse(localStorage.getItem('sa_users') || '[]');
+  const existing = users.find(u => u.email === email);
+  if (!existing) {
+    users.push({ name, email, password, role });
+    localStorage.setItem('sa_users', JSON.stringify(users));
+  }
+
+  // Set session and redirect (routing analyst/client to client dashboard, admin to admin dashboard)
+  localStorage.setItem('sa_session', JSON.stringify({ name: existing ? existing.name : name, email, role }));
+  
+  window.location.href = role === 'admin' ? 'admin-dashboard.html' : 'client-dashboard.html';
+}
+</script>
+</body>
+</html>

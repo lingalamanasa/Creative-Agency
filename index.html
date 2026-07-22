@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stackly Creative Agency | Transform Your Brand</title>
+  <meta name="description" content="Stackly is a premier creative agency delivering branding, web design, digital marketing, and video production services that transform businesses."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%237c3aed'/><text y='.9em' font-size='70' x='15'>S</text></svg>"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="index.html" class="navbar-logo">
+      <div class="logo-icon">S</div>
+      <div>
+        <div class="logo-text">STACKLY</div>
+        <div class="logo-sub">Creative Agency</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+      <a href="register.html" class="btn btn-primary btn-sm">Register</a>
+    </div>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu">
+  <button class="mobile-close">✕</button>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="blog.html">Blog</a>
+  <a href="contact.html">Contact</a>
+  <a href="login.html" class="btn btn-outline" style="margin-top:16px">Login</a>
+  <a href="register.html" class="btn btn-primary" style="margin-top:12px">Register</a>
+</div>
+
+<!-- ══ SECTION 1: HERO (Telecom Split Layout) ══ -->
+<section class="hero-v2" id="hero">
+  <!-- Canvas background animation -->
+  <canvas id="heroCanvas"></canvas>
+
+  <!-- BG Image with Ken Burns animation -->
+  <div class="hero-bg-img" id="heroBgImg"></div>
+
+  <!-- Aurora overlay -->
+  <div class="hero-aurora"></div>
+  <!-- Grid overlay -->
+  <div class="hero-grid-overlay"></div>
+
+  <!-- Light beams animation -->
+  <div class="hero-beams">
+    <div class="beam beam-1"></div>
+    <div class="beam beam-2"></div>
+    <div class="beam beam-3"></div>
+  </div>
+
+  <div class="container" style="position:relative;z-index:10;width:100%">
+    <div class="hero-v2-layout">
+
+      <!-- ── LEFT COLUMN ── -->
+      <div class="hero-left">
+        <!-- Kicker badge -->
+        <div class="hero-kicker animate-on-scroll">
+          <span class="kicker-dot"></span>
+          India's #1 Award-Winning Creative Agency
+        </div>
+
+        <!-- Headline -->
+        <h1 class="hero-v2-title animate-on-scroll delay-1">
+          Bold Brands.<br/>
+          <span class="hero-gradient-word">Stunning Design.</span><br/>
+          Real Results.
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="hero-v2-sub animate-on-scroll delay-2">
+          Stackly transforms businesses into iconic brands — through world-class design, high-performance websites, and campaigns that captivate audiences and drive measurable growth.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-v2-cta animate-on-scroll delay-3">
+          <a href="contact.html" class="btn-hero-primary">
+            Start Your Project
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="services.html" class="btn-hero-secondary">
+            View Services
+          </a>
+        </div>
+
+        <!-- Feature pills -->
+        <div class="hero-pills animate-on-scroll delay-4">
+          <div class="hero-pill pill-live">
+            <span class="pill-dot"></span>
+            Award-Winning
+          </div>
+          <div class="hero-pill">Pan-India Presence</div>
+          <div class="hero-pill">500+ Projects</div>
+          <div class="hero-pill">24×7 Support</div>
+        </div>
+      </div>
+
+      <!-- ── RIGHT COLUMN: STATS CARD ── -->
+      <div class="hero-right animate-on-scroll delay-2">
+        <div class="hero-stats-card">
+          <!-- Card header -->
+          <div class="stats-card-header">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <span>Agency Pulse</span>
+          </div>
+
+          <!-- Stat rows -->
+          <div class="stat-row">
+            <div class="stat-row-num" data-count-v2="500" data-suffix-v2="+">0+</div>
+            <div class="stat-row-label">Projects Delivered</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-row-num" data-count-v2="200" data-suffix-v2="+">0+</div>
+            <div class="stat-row-label">Happy Clients</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-row-num" data-count-v2="15" data-suffix-v2="+">0+</div>
+            <div class="stat-row-label">Industry Awards Won</div>
+          </div>
+
+          <!-- Divider -->
+          <div style="height:1px;background:rgba(255,255,255,0.06);margin:20px 0"></div>
+
+          <!-- Quick contact -->
+          <div class="quick-contact-label">Quick Project Enquiry</div>
+          <form class="quick-contact-form" onsubmit="handleHeroForm(event)">
+            <input
+              type="email"
+              id="hero-email"
+              class="quick-contact-input"
+              placeholder="Enter your email address"
+              autocomplete="off"
+            />
+            <button type="submit" class="quick-contact-btn">Go</button>
+          </form>
+          <div id="hero-form-msg" style="display:none;margin-top:10px;font-size:0.8rem;color:#10b981;padding:8px 12px;background:rgba(16,185,129,0.1);border-radius:8px;border:1px solid rgba(16,185,129,0.2)">
+            ✓ Thanks! We'll reach out within 4 hours.
+          </div>
+
+          <!-- Card tags -->
+          <div style="display:flex;gap:8px;margin-top:16px;flex-wrap:wrap">
+            <span style="font-size:0.72rem;padding:4px 10px;border-radius:50px;background:rgba(124,58,237,0.15);color:#9d65f5;border:1px solid rgba(124,58,237,0.2)">Branding</span>
+            <span style="font-size:0.72rem;padding:4px 10px;border-radius:50px;background:rgba(6,182,212,0.12);color:#22d3ee;border:1px solid rgba(6,182,212,0.2)">Web Design</span>
+            <span style="font-size:0.72rem;padding:4px 10px;border-radius:50px;background:rgba(245,158,11,0.12);color:#fbbf24;border:1px solid rgba(245,158,11,0.2)">Marketing</span>
+          </div>
+        </div>
+
+        <!-- Floating badge below card -->
+        <div class="hero-floating-badge animate-on-scroll delay-5">
+          <div style="font-size:1.4rem">🏆</div>
+          <div>
+            <div style="font-weight:700;font-size:0.85rem">15+ Industry Awards</div>
+            <div style="color:#94a3b8;font-size:0.75rem">D&AD · Cannes · Awwwards</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero-v2-scroll">
+    <div class="scroll-mouse">
+      <div class="scroll-wheel"></div>
+    </div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ══ SECTION 2: STATS ══ -->
+<section class="stats-section" id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item animate-on-scroll">
+        <div class="num"><span data-count="500" data-suffix="+">0+</span></div>
+        <div class="label">Projects Delivered</div>
+      </div>
+      <div class="stat-item animate-on-scroll delay-1">
+        <div class="num"><span data-count="200" data-suffix="+">0+</span></div>
+        <div class="label">Happy Clients</div>
+      </div>
+      <div class="stat-item animate-on-scroll delay-2">
+        <div class="num"><span data-count="15" data-suffix="+">0+</span></div>
+        <div class="label">Industry Awards</div>
+      </div>
+      <div class="stat-item animate-on-scroll delay-3">
+        <div class="num"><span data-count="10" data-suffix=" Yrs">0 Yrs</span></div>
+        <div class="label">Years of Excellence</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 3: ABOUT SNAPSHOT ══ -->
+<section id="about-snap">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap animate-on-scroll">
+        <img src="images/about.png" alt="Stackly Creative Agency Office" loading="lazy"/>
+        <div class="about-badge">
+          <div style="font-size:1.8rem;font-weight:900;background:linear-gradient(135deg,#7c3aed,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">10+</div>
+          <div style="font-size:0.75rem;color:#94a3b8;letter-spacing:1px;">Years of Excellence</div>
+        </div>
+      </div>
+      <div class="animate-on-scroll delay-2">
+        <span class="section-badge">About Stackly</span>
+        <h2 class="section-title">We Are a Full-Service <span class="gradient-text">Creative Powerhouse</span></h2>
+        <p style="color:#94a3b8;margin-bottom:0">Founded in 2015, Stackly has been at the forefront of creative innovation. We blend art with technology to build brands that don't just look good — they perform.</p>
+        <div class="features-list">
+          <div class="feature-item">
+            <div class="feature-icon">🎨</div>
+            <div>
+              <h4>Creative Strategy</h4>
+              <p style="color:#94a3b8;font-size:0.88rem;margin-top:4px">Data-driven creative thinking that resonates with your audience.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🚀</div>
+            <div>
+              <h4>Digital Excellence</h4>
+              <p style="color:#94a3b8;font-size:0.88rem;margin-top:4px">Cutting-edge digital solutions built for scale and performance.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🏆</div>
+            <div>
+              <h4>Award-Winning Results</h4>
+              <p style="color:#94a3b8;font-size:0.88rem;margin-top:4px">15+ industry awards validating our commitment to excellence.</p>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:32px">
+          <a href="about.html" class="btn btn-primary">Know More About Us →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 4: SERVICES PREVIEW ══ -->
+<section style="background:var(--bg-secondary)" id="services-preview">
+  <div class="container" style="text-align:center">
+    <span class="section-badge animate-on-scroll">Our Services</span>
+    <h2 class="section-title animate-on-scroll">What We <span class="gradient-text">Do Best</span></h2>
+    <p class="section-desc animate-on-scroll">From branding to digital campaigns, we offer end-to-end creative solutions that elevate your business.</p>
+    <div class="services-grid">
+      <div class="service-card animate-on-scroll">
+        <div class="service-icon" style="background:rgba(124,58,237,0.15)">🎨</div>
+        <h3>Brand Identity</h3>
+        <p>Logo design, brand guidelines, visual systems, and complete identity packages that make you unforgettable.</p>
+        <a href="error.html" class="btn btn-outline btn-sm" style="margin-top:20px">Learn More →</a>
+      </div>
+      <div class="service-card animate-on-scroll delay-1">
+        <div class="service-icon" style="background:rgba(6,182,212,0.15)">💻</div>
+        <h3>Web Design & Dev</h3>
+        <p>Beautiful, fast, responsive websites and web apps built with modern technologies for maximum impact.</p>
+        <a href="error.html" class="btn btn-outline btn-sm" style="margin-top:20px">Learn More →</a>
+      </div>
+      <div class="service-card animate-on-scroll delay-2">
+        <div class="service-icon" style="background:rgba(245,158,11,0.15)">📱</div>
+        <h3>Digital Marketing</h3>
+        <p>SEO, social media, paid ads, and content strategies that attract, engage, and convert your audience.</p>
+        <a href="error.html" class="btn btn-outline btn-sm" style="margin-top:20px">Learn More →</a>
+      </div>
+      <div class="service-card animate-on-scroll">
+        <div class="service-icon" style="background:rgba(16,185,129,0.15)">🎬</div>
+        <h3>Video Production</h3>
+        <p>Cinematic brand films, product videos, social reels, and motion graphics that captivate viewers.</p>
+        <a href="error.html" class="btn btn-outline btn-sm" style="margin-top:20px">Learn More →</a>
+      </div>
+      <div class="service-card animate-on-scroll delay-1">
+        <div class="service-icon" style="background:rgba(239,68,68,0.15)">📊</div>
+        <h3>Analytics & Insights</h3>
+        <p>Data dashboards, performance tracking, and actionable insights to keep you ahead of the curve.</p>
+        <a href="error.html" class="btn btn-outline btn-sm" style="margin-top:20px">Learn More →</a>
+      </div>
+      <div class="service-card animate-on-scroll delay-2">
+        <div class="service-icon" style="background:rgba(168,85,247,0.15)">✍️</div>
+        <h3>Content Creation</h3>
+        <p>Compelling copy, blog posts, social content, and storytelling that builds trust and drives engagement.</p>
+        <a href="error.html" class="btn btn-outline btn-sm" style="margin-top:20px">Learn More →</a>
+      </div>
+    </div>
+    <div style="margin-top:48px">
+      <a href="services.html" class="btn btn-primary">View All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 5: PORTFOLIO / WORK ══ -->
+<section id="portfolio">
+  <div class="container" style="text-align:center">
+    <span class="section-badge animate-on-scroll">Our Work</span>
+    <h2 class="section-title animate-on-scroll">Featured <span class="gradient-text">Projects</span></h2>
+    <p class="section-desc animate-on-scroll">A glimpse into the transformative work we've delivered for forward-thinking brands worldwide.</p>
+    <div class="portfolio-grid">
+      <div class="portfolio-item animate-on-scroll" style="grid-column:span 2">
+        <img src="images/portfolio1.png" alt="Brand Identity Project"/>
+        <div class="portfolio-overlay">
+          <div class="portfolio-tag">Brand Identity</div>
+          <div class="portfolio-title">NovaBrand — Full Identity Overhaul</div>
+          <a href="error.html" class="btn btn-sm" style="background:rgba(255,255,255,0.15);color:#fff;margin-top:10px;border:1px solid rgba(255,255,255,0.3);border-radius:50px;padding:8px 20px;text-decoration:none;display:inline-block">View Project →</a>
+        </div>
+      </div>
+      <div class="portfolio-item animate-on-scroll delay-1">
+        <img src="images/portfolio2.png" alt="Web Design Project"/>
+        <div class="portfolio-overlay">
+          <div class="portfolio-tag">Web Design</div>
+          <div class="portfolio-title">PulseApp Dashboard UI</div>
+          <a href="error.html" class="btn btn-sm" style="background:rgba(255,255,255,0.15);color:#fff;margin-top:10px;border:1px solid rgba(255,255,255,0.3);border-radius:50px;padding:8px 20px;text-decoration:none;display:inline-block">View Project →</a>
+        </div>
+      </div>
+      <div class="portfolio-item animate-on-scroll delay-2" style="grid-column:span 1">
+        <img src="images/about.png" alt="Creative Campaign"/>
+        <div class="portfolio-overlay">
+          <div class="portfolio-tag">Marketing</div>
+          <div class="portfolio-title">SkyGrow Launch Campaign</div>
+          <a href="error.html" class="btn btn-sm" style="background:rgba(255,255,255,0.15);color:#fff;margin-top:10px;border:1px solid rgba(255,255,255,0.3);border-radius:50px;padding:8px 20px;text-decoration:none;display:inline-block">View Project →</a>
+        </div>
+      </div>
+      <div class="portfolio-item animate-on-scroll delay-1">
+        <img src="images/hero_bg.png" alt="Video Production"/>
+        <div class="portfolio-overlay">
+          <div class="portfolio-tag">Video</div>
+          <div class="portfolio-title">EchoWave Brand Film</div>
+          <a href="error.html" class="btn btn-sm" style="background:rgba(255,255,255,0.15);color:#fff;margin-top:10px;border:1px solid rgba(255,255,255,0.3);border-radius:50px;padding:8px 20px;text-decoration:none;display:inline-block">View Project →</a>
+        </div>
+      </div>
+      <div class="portfolio-item animate-on-scroll delay-2">
+        <img src="images/team.png" alt="Social Media Campaign"/>
+        <div class="portfolio-overlay">
+          <div class="portfolio-tag">Social Media</div>
+          <div class="portfolio-title">Nexora Social Strategy</div>
+          <a href="error.html" class="btn btn-sm" style="background:rgba(255,255,255,0.15);color:#fff;margin-top:10px;border:1px solid rgba(255,255,255,0.3);border-radius:50px;padding:8px 20px;text-decoration:none;display:inline-block">View Project →</a>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:48px">
+      <a href="error.html" class="btn btn-outline">View All Projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 6: TEAM ══ -->
+<section style="background:var(--bg-secondary)" id="team">
+  <div class="container" style="text-align:center">
+    <span class="section-badge animate-on-scroll">The Team</span>
+    <h2 class="section-title animate-on-scroll">Meet the <span class="gradient-text">Creatives</span></h2>
+    <div class="team-grid">
+      <!-- Arjun Sharma -->
+      <div class="team-card animate-on-scroll">
+        <div class="team-avatar-wrap">
+          <img src="images/team_arjun.png" alt="Arjun Sharma" class="team-avatar-img" style="--ring-color:#7c3aed"/>
+          <div class="team-avatar-ring" style="border-color:#7c3aed"></div>
+        </div>
+        <div class="team-name">Arjun Sharma</div>
+        <div class="team-role">CEO &amp; Creative Director</div>
+        <p style="color:#94a3b8;font-size:0.82rem;margin-bottom:16px">Visionary leader with 12+ years crafting world-class brand strategies.</p>
+        <div class="team-social">
+          <a href="error.html" title="LinkedIn">in</a>
+          <a href="error.html" title="Twitter">𝕏</a>
+          <a href="error.html" title="Instagram">📷</a>
+        </div>
+      </div>
+
+      <!-- Priya Nair -->
+      <div class="team-card animate-on-scroll delay-1">
+        <div class="team-avatar-wrap">
+          <img src="images/team_priya.png" alt="Priya Nair" class="team-avatar-img" style="--ring-color:#06b6d4"/>
+          <div class="team-avatar-ring" style="border-color:#06b6d4"></div>
+        </div>
+        <div class="team-name">Priya Nair</div>
+        <div class="team-role">Head of Design</div>
+        <p style="color:#94a3b8;font-size:0.82rem;margin-bottom:16px">Award-winning designer who transforms complex ideas into visual masterpieces.</p>
+        <div class="team-social">
+          <a href="error.html" title="LinkedIn">in</a>
+          <a href="error.html" title="Dribbble">🏀</a>
+          <a href="error.html" title="Behance">Be</a>
+        </div>
+      </div>
+
+      <!-- Ravi Kumar -->
+      <div class="team-card animate-on-scroll delay-2">
+        <div class="team-avatar-wrap">
+          <img src="images/team_ravi.png" alt="Ravi Kumar" class="team-avatar-img" style="--ring-color:#f59e0b"/>
+          <div class="team-avatar-ring" style="border-color:#f59e0b"></div>
+        </div>
+        <div class="team-name">Ravi Kumar</div>
+        <div class="team-role">Lead Developer</div>
+        <p style="color:#94a3b8;font-size:0.82rem;margin-bottom:16px">Full-stack engineer building blazing-fast digital experiences.</p>
+        <div class="team-social">
+          <a href="error.html" title="GitHub">⚙</a>
+          <a href="error.html" title="LinkedIn">in</a>
+          <a href="error.html" title="Twitter">𝕏</a>
+        </div>
+      </div>
+
+      <!-- Sneha Reddy -->
+      <div class="team-card animate-on-scroll delay-3">
+        <div class="team-avatar-wrap">
+          <img src="images/team_sneha.png" alt="Sneha Reddy" class="team-avatar-img" style="--ring-color:#10b981"/>
+          <div class="team-avatar-ring" style="border-color:#10b981"></div>
+        </div>
+        <div class="team-name">Sneha Reddy</div>
+        <div class="team-role">Marketing Strategist</div>
+        <p style="color:#94a3b8;font-size:0.82rem;margin-bottom:16px">Data-driven strategist who turns campaigns into measurable growth.</p>
+        <div class="team-social">
+          <a href="error.html" title="LinkedIn">in</a>
+          <a href="error.html" title="Twitter">𝕏</a>
+          <a href="error.html" title="YouTube">▶</a>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:48px">
+      <a href="about.html" class="btn btn-outline">Meet Full Team →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 7: TESTIMONIALS ══ -->
+<section class="testimonials-section" id="testimonials">
+  <div class="container" style="text-align:center">
+    <span class="section-badge animate-on-scroll">Testimonials</span>
+    <h2 class="section-title animate-on-scroll">What Our <span class="gradient-text">Clients Say</span></h2>
+    <p class="section-desc animate-on-scroll">Real words from the brands we've helped transform into market leaders.</p>
+    <div class="testimonials-grid">
+      <div class="testimonial-card animate-on-scroll">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Stackly completely reimagined our brand from the ground up. The new identity increased our market recognition by 300%. Their team is phenomenal — professional, creative, and deeply committed."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">KM</div>
+          <div>
+            <div class="author-name">Karan Mehta</div>
+            <div class="author-company">CEO, NovaTech Solutions</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card animate-on-scroll delay-1">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"The website Stackly built for us is a masterpiece. Page load speed went from 3.2s to 0.8s and conversions jumped 180%. Worth every penny and then some."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,#06b6d4,#7c3aed)">AP</div>
+          <div>
+            <div class="author-name">Ananya Pillai</div>
+            <div class="author-company">Founder, GlowFit</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card animate-on-scroll delay-2">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Our social media following grew by 50K in just 2 months after Stackly took over our digital strategy. The ROI is incredible and the team is always responsive and creative."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,#f59e0b,#7c3aed)">RV</div>
+          <div>
+            <div class="author-name">Rohan Verma</div>
+            <div class="author-company">CMO, EdgeRetail</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 8: BLOG PREVIEW ══ -->
+<section id="blog-preview">
+  <div class="container" style="text-align:center">
+    <span class="section-badge animate-on-scroll">Insights</span>
+    <h2 class="section-title animate-on-scroll">Latest from the <span class="gradient-text">Blog</span></h2>
+    <p class="section-desc animate-on-scroll">Creative insights, marketing strategies, and design trends from our expert team.</p>
+    <div class="blog-grid">
+      <div class="blog-card animate-on-scroll">
+        <div style="overflow:hidden">
+          <img class="blog-img" src="images/blog1.png" alt="Future of Digital Marketing"/>
+        </div>
+        <div class="blog-body">
+          <span class="blog-category">Digital Marketing</span>
+          <div class="blog-title">The Future of Digital Marketing in 2025: AI, Personalization & Beyond</div>
+          <div class="blog-desc">Explore how AI-powered tools and hyper-personalization are reshaping the digital marketing landscape.</div>
+          <div class="blog-meta">
+            <span>Jul 15, 2025</span>
+            <a href="error.html" style="color:var(--purple-light);text-decoration:none;font-weight:600">Read More →</a>
+          </div>
+        </div>
+      </div>
+      <div class="blog-card animate-on-scroll delay-1">
+        <div style="overflow:hidden">
+          <img class="blog-img" src="images/blog2.png" alt="Brand Identity Design"/>
+        </div>
+        <div class="blog-body">
+          <span class="blog-category">Branding</span>
+          <div class="blog-title">10 Brand Identity Mistakes That Are Killing Your Business (And How to Fix Them)</div>
+          <div class="blog-desc">Identify the most common branding pitfalls and learn proven strategies to build a strong visual identity.</div>
+          <div class="blog-meta">
+            <span>Jul 8, 2025</span>
+            <a href="error.html" style="color:var(--purple-light);text-decoration:none;font-weight:600">Read More →</a>
+          </div>
+        </div>
+      </div>
+      <div class="blog-card animate-on-scroll delay-2">
+        <div style="overflow:hidden">
+          <img class="blog-img" src="images/blog3.png" alt="Social Media Strategy"/>
+        </div>
+        <div class="blog-body">
+          <span class="blog-category">Social Media</span>
+          <div class="blog-title">How to Build a Social Media Strategy That Actually Drives Revenue</div>
+          <div class="blog-desc">A step-by-step framework for creating a social media presence that converts followers into paying customers.</div>
+          <div class="blog-meta">
+            <span>Jul 1, 2025</span>
+            <a href="error.html" style="color:var(--purple-light);text-decoration:none;font-weight:600">Read More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:48px">
+      <a href="blog.html" class="btn btn-outline">View All Posts →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 9: CTA / NEWSLETTER ══ -->
+<section class="cta-section" id="cta">
+  <div class="container">
+    <span class="section-badge animate-on-scroll">Get Started</span>
+    <h2 class="section-title animate-on-scroll" style="font-size:clamp(2rem,5vw,3.5rem)">Ready to <span class="gradient-text">Transform</span><br/>Your Brand?</h2>
+    <p class="section-desc animate-on-scroll">Join 200+ businesses who've trusted Stackly to elevate their brand to the next level.</p>
+    <div class="animate-on-scroll">
+      <a href="contact.html" class="btn btn-primary" style="font-size:1.1rem;padding:16px 48px">Start Your Project ✦</a>
+      <a href="error.html" class="btn btn-outline" style="margin-left:16px;font-size:1.1rem;padding:16px 48px">View Portfolio</a>
+    </div>
+    <p style="color:var(--text-muted);margin-top:40px;margin-bottom:8px;font-size:0.9rem">Subscribe to our newsletter for creative insights</p>
+    <form class="newsletter-form animate-on-scroll" onsubmit="event.preventDefault();alert('Thank you for subscribing! 🎉')">
+      <input class="newsletter-input" type="email" placeholder="your@email.com" required/>
+      <button type="submit" class="btn btn-primary">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="navbar-logo" style="display:inline-flex">
+          <div class="logo-icon">S</div>
+          <div>
+            <div class="logo-text">STACKLY</div>
+            <div class="logo-sub">Creative Agency</div>
+          </div>
+        </a>
+        <p>We craft bold brands, stunning websites, and campaigns that captivate audiences and drive measurable growth.</p>
+        <div class="footer-social">
+          <a href="error.html" class="social-icon" title="Instagram">📸</a>
+          <a href="error.html" class="social-icon" title="Twitter">𝕏</a>
+          <a href="error.html" class="social-icon" title="LinkedIn">in</a>
+          <a href="error.html" class="social-icon" title="YouTube">▶</a>
+          <a href="error.html" class="social-icon" title="Facebook">f</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="error.html">Careers</a></li>
+          <li><a href="error.html">Press</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Brand Identity</a></li>
+          <li><a href="services.html">Web Design</a></li>
+          <li><a href="services.html">Digital Marketing</a></li>
+          <li><a href="services.html">Video Production</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="error.html">Case Studies</a></li>
+          <li><a href="error.html">Privacy Policy</a></li>
+          <li><a href="error.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Stackly Creative Agency. All rights reserved.</span>
+      <span style="display:flex;align-items:center;gap:8px">
+        <span class="logo-icon" style="width:24px;height:24px;font-size:0.7rem">S</span>
+        Made with ❤ by Stackly
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+
+<!-- ── HERO V2 STYLES ── -->
+<style>
+/* ── HERO V2 LAYOUT ──────────────────────────────── */
+.hero-v2 {
+  position: relative;
+  min-height: 100vh;
+  background: #06101f;
+  display: flex;
+  align-items: center;
+  padding: 110px 0 80px;
+  overflow: hidden;
+}
+
+/* Canvas */
+#heroCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── BG IMAGE with Ken Burns ── */
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  background-image: url('images/hero_visual.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  animation: kenBurns 20s ease-in-out infinite alternate;
+  transform-origin: center center;
+  will-change: transform;
+}
+@keyframes kenBurns {
+  0%   { transform: scale(1.0) translate(0%, 0%); }
+  25%  { transform: scale(1.08) translate(-1.5%, 1%); }
+  50%  { transform: scale(1.12) translate(1%, -1.5%); }
+  75%  { transform: scale(1.06) translate(-0.8%, -0.8%); }
+  100% { transform: scale(1.0) translate(0%, 0%); }
+}
+
+/* Vignette + dark tint over the image (keeps text legible) */
+.hero-bg-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, rgba(6,10,31,0.78) 0%, rgba(6,10,31,0.45) 55%, rgba(6,10,31,0.65) 100%),
+    linear-gradient(to bottom, rgba(6,10,31,0.4) 0%, rgba(6,10,31,0.2) 50%, rgba(6,10,31,0.6) 100%);
+}
+
+/* ── LIGHT BEAMS ── */
+.hero-beams {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+.beam {
+  position: absolute;
+  top: -40%;
+  width: 2px;
+  height: 180%;
+  background: linear-gradient(to bottom, transparent 0%, rgba(124,58,237,0.3) 40%, rgba(6,182,212,0.15) 60%, transparent 100%);
+  border-radius: 100px;
+  filter: blur(8px);
+  animation: beamSweep linear infinite;
+  transform-origin: top center;
+}
+.beam-1 {
+  left: 20%;
+  animation-duration: 8s;
+  animation-delay: 0s;
+  width: 3px;
+  background: linear-gradient(to bottom, transparent, rgba(124,58,237,0.4), rgba(124,58,237,0.1), transparent);
+}
+.beam-2 {
+  left: 55%;
+  animation-duration: 11s;
+  animation-delay: -3s;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, rgba(6,182,212,0.35), rgba(6,182,212,0.1), transparent);
+}
+.beam-3 {
+  left: 78%;
+  animation-duration: 9s;
+  animation-delay: -6s;
+  width: 1.5px;
+  background: linear-gradient(to bottom, transparent, rgba(245,158,11,0.25), rgba(245,158,11,0.08), transparent);
+}
+@keyframes beamSweep {
+  0%   { transform: rotate(-8deg) scaleY(0.8); opacity: 0; }
+  15%  { opacity: 1; }
+  50%  { transform: rotate(8deg) scaleY(1.1); opacity: 0.8; }
+  85%  { opacity: 1; }
+  100% { transform: rotate(-8deg) scaleY(0.8); opacity: 0; }
+}
+
+/* Aurora gradient blobs — sits OVER the image for color depth */
+.hero-aurora {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 60% at 20% 50%, rgba(124,58,237,0.28) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 80% 30%, rgba(6,182,212,0.18) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 40% at 50% 80%, rgba(245,158,11,0.1) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 3;
+  animation: auroraShift 12s ease-in-out infinite alternate;
+}
+@keyframes auroraShift {
+  0%   { opacity: 0.8; }
+  50%  { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+}
+
+/* Dot grid overlay */
+.hero-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 36px 36px;
+  z-index: 4;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, #000 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, #000 40%, transparent 100%);
+}
+
+/* Two-column layout */
+.hero-v2-layout {
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  gap: 60px;
+  align-items: center;
+  width: 100%;
+}
+
+/* ── LEFT COLUMN ── */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Kicker badge */
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  border-radius: 50px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #cbd5e1;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 28px;
+  width: fit-content;
+  backdrop-filter: blur(10px);
+}
+.kicker-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #7c3aed;
+  box-shadow: 0 0 8px #7c3aed;
+  animation: kicker-pulse 1.8s ease infinite;
+  flex-shrink: 0;
+}
+@keyframes kicker-pulse {
+  0%,100% { opacity: 1; box-shadow: 0 0 8px #7c3aed; }
+  50% { opacity: 0.6; box-shadow: 0 0 16px #7c3aed; }
+}
+
+/* Headline */
+.hero-v2-title {
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  font-weight: 900;
+  line-height: 1.08;
+  color: #f1f5f9;
+  letter-spacing: -1px;
+  margin-bottom: 24px;
+}
+.hero-gradient-word {
+  background: linear-gradient(90deg, #7c3aed 0%, #06b6d4 60%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% auto;
+  animation: gradient-shift 4s linear infinite;
+}
+@keyframes gradient-shift {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Subtitle */
+.hero-v2-sub {
+  font-size: 1.05rem;
+  color: #94a3b8;
+  line-height: 1.8;
+  max-width: 520px;
+  margin-bottom: 36px;
+}
+
+/* CTA buttons */
+.hero-v2-cta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+.btn-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 32px;
+  border-radius: 50px;
+  background: #7c3aed;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.98rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 30px rgba(124,58,237,0.4);
+  letter-spacing: 0.2px;
+}
+.btn-hero-primary:hover {
+  background: #6d28d9;
+  transform: translateY(-2px);
+  box-shadow: 0 0 50px rgba(124,58,237,0.6);
+}
+.btn-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 30px;
+  border-radius: 50px;
+  background: transparent;
+  color: #cbd5e1;
+  font-weight: 600;
+  font-size: 0.98rem;
+  text-decoration: none;
+  border: 1.5px solid rgba(255,255,255,0.15);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+.btn-hero-secondary:hover {
+  border-color: rgba(124,58,237,0.5);
+  color: #f1f5f9;
+  background: rgba(124,58,237,0.1);
+  transform: translateY(-2px);
+}
+
+/* Feature pills */
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.hero-pill {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #94a3b8;
+  font-size: 0.82rem;
+  font-weight: 500;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+.hero-pill:hover {
+  border-color: rgba(124,58,237,0.3);
+  color: #f1f5f9;
+}
+.pill-live { color: #f1f5f9; border-color: rgba(124,58,237,0.4); background: rgba(124,58,237,0.1); }
+.pill-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: kicker-pulse 1.5s ease infinite;
+}
+
+/* ── RIGHT COLUMN ── */
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Stats card — glassmorphism */
+.hero-stats-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 28px 28px 24px;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow:
+    0 0 0 1px rgba(124,58,237,0.1),
+    0 24px 60px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.hero-stats-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 0 1px rgba(124,58,237,0.2),
+    0 32px 80px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+/* Card header */
+.stats-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-bottom: 20px;
+  letter-spacing: 0.3px;
+}
+
+/* Stat rows inside card */
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+.stat-row:hover {
+  background: rgba(124,58,237,0.08);
+  border-color: rgba(124,58,237,0.2);
+}
+.stat-row-num {
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: #f1f5f9;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: -1px;
+}
+.stat-row-label {
+  font-size: 0.82rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Quick contact form inside card */
+.quick-contact-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.quick-contact-form {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.quick-contact-input {
+  flex: 1;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 50px;
+  color: #f1f5f9;
+  font-size: 0.88rem;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+.quick-contact-input::placeholder { color: #475569; }
+.quick-contact-input:focus {
+  border-color: rgba(124,58,237,0.5);
+  background: rgba(124,58,237,0.06);
+  box-shadow: 0 0 0 3px rgba(124,58,237,0.12);
+}
+.quick-contact-btn {
+  padding: 12px 20px;
+  border-radius: 50px;
+  background: #7c3aed;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.88rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  min-width: 52px;
+}
+.quick-contact-btn:hover {
+  background: #6d28d9;
+  transform: scale(1.04);
+  box-shadow: 0 0 20px rgba(124,58,237,0.5);
+}
+
+/* Floating badge */
+.hero-floating-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  animation: float-badge 4s ease-in-out infinite;
+}
+@keyframes float-badge {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Scroll indicator */
+.hero-v2-scroll {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #475569;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  z-index: 2;
+  animation: fade-in 1s ease 1.5s both;
+}
+.scroll-mouse {
+  width: 22px; height: 34px;
+  border: 2px solid rgba(255,255,255,0.15);
+  border-radius: 11px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 5px;
+}
+.scroll-wheel {
+  width: 4px; height: 8px;
+  background: #7c3aed;
+  border-radius: 2px;
+  animation: scroll-wheel-anim 1.8s ease infinite;
+}
+@keyframes scroll-wheel-anim {
+  0% { transform: translateY(0); opacity: 1; }
+  80% { transform: translateY(10px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 0; }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1100px) {
+  .hero-v2-layout {
+    grid-template-columns: 1fr 420px;
+    gap: 40px;
+  }
+}
+@media (max-width: 900px) {
+  .hero-v2-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .hero-right { order: -1; }
+  .hero-stats-card { max-width: 480px; margin: 0 auto; }
+  .hero-v2-title { font-size: clamp(2.2rem, 6vw, 3.2rem); }
+  .hero-floating-badge { max-width: 480px; margin: 0 auto; }
+}
+@media (max-width: 480px) {
+  .hero-v2 { padding: 90px 0 70px; }
+  .hero-v2-title { font-size: 2.2rem; letter-spacing: -0.5px; }
+  .hero-pills { gap: 8px; }
+  .hero-pill { font-size: 0.76rem; padding: 6px 12px; }
+  .stat-row-num { font-size: 1.5rem; }
+  .hero-stats-card { padding: 20px 18px; }
+}
+
+/* ── TEAM PHOTO AVATARS ── */
+.team-avatar-wrap {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 20px;
+  flex-shrink: 0;
+}
+.team-avatar-img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+.team-card:hover .team-avatar-img {
+  transform: scale(1.07);
+  box-shadow: 0 0 28px color-mix(in srgb, var(--ring-color, #7c3aed) 50%, transparent);
+}
+.team-avatar-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2.5px solid;
+  opacity: 0.5;
+  z-index: 0;
+  transition: opacity 0.3s ease, inset 0.3s ease;
+  animation: ring-spin 8s linear infinite;
+}
+.team-card:hover .team-avatar-ring {
+  opacity: 1;
+  inset: -6px;
+}
+@keyframes ring-spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+
+<!-- ── HERO V2 SCRIPTS ── -->
+<script>
+/* Canvas floating particle lines */
+(function() {
+  const canvas = document.getElementById('heroCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, dots = [];
+  const NUM = 60;
+  const COLORS = ['#7c3aed','#06b6d4','#f59e0b'];
+
+  function resize() {
+    W = canvas.width = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize, { passive: true });
+
+  for (let i = 0; i < NUM; i++) {
+    dots.push({
+      x: Math.random() * 1200,
+      y: Math.random() * 800,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      r: 1.5 + Math.random() * 2,
+      c: COLORS[Math.floor(Math.random() * COLORS.length)],
+      a: 0.3 + Math.random() * 0.5
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    // Draw connection lines
+    for (let i = 0; i < dots.length; i++) {
+      for (let j = i + 1; j < dots.length; j++) {
+        const dx = dots[i].x - dots[j].x;
+        const dy = dots[i].y - dots[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 130) {
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(124,58,237,${0.12 * (1 - dist/130)})`;
+          ctx.lineWidth = 0.8;
+          ctx.moveTo(dots[i].x, dots[i].y);
+          ctx.lineTo(dots[j].x, dots[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+    // Draw dots
+    dots.forEach(d => {
+      ctx.beginPath();
+      ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+      ctx.fillStyle = d.c + Math.floor(d.a * 255).toString(16).padStart(2,'0');
+      ctx.fill();
+      // Move
+      d.x += d.vx; d.y += d.vy;
+      if (d.x < 0) d.x = W;
+      if (d.x > W) d.x = 0;
+      if (d.y < 0) d.y = H;
+      if (d.y > H) d.y = 0;
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* Counter animation for stat-row nums */
+(function() {
+  const nums = document.querySelectorAll('[data-count-v2]');
+  if (!nums.length) return;
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const el = e.target;
+        const target = parseInt(el.dataset.countV2);
+        const suffix = el.dataset.suffixV2 || '';
+        let start = 0;
+        const dur = 1800;
+        const t0 = performance.now();
+        const tick = (t) => {
+          const p = Math.min((t - t0) / dur, 1);
+          const ease = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.floor(ease * target) + suffix;
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+        obs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  nums.forEach(n => obs.observe(n));
+})();
+
+/* Hero quick form */
+function handleHeroForm(e) {
+  e.preventDefault();
+  const email = document.getElementById('hero-email').value;
+  if (email) {
+    document.querySelector('.quick-contact-form').style.display = 'none';
+    document.getElementById('hero-form-msg').style.display = 'block';
+    document.getElementById('hero-form-msg').textContent = '✓ Got it! We\'ll reach out to ' + email + ' within 4 hours.';
+  }
+}
+</script>
+</body>
+</html>
+
