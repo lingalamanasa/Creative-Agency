@@ -1300,6 +1300,10 @@ footer {
 .contact-form { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 40px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 textarea.form-input { resize: none; height: 140px; border-radius: 12px; }
+.offices-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+@media (max-width: 768px) {
+  .offices-grid { grid-template-columns: 1fr; }
+}
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
