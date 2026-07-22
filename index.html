@@ -915,6 +915,8 @@
 
 /* Stats card — glassmorphism */
 .hero-stats-card {
+  width: 100%;
+  box-sizing: border-box;
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: 20px;
@@ -1107,7 +1109,9 @@
   .hero-pills { gap: 8px; }
   .hero-pill { font-size: 0.76rem; padding: 6px 12px; }
   .stat-row-num { font-size: 1.5rem; }
-  .hero-stats-card { padding: 20px 18px; }
+  .hero-stats-card { padding: 16px; width: 100%; max-width: 100%; overflow: hidden; }
+  .stat-row { padding: 12px 14px; }
+  .stat-row-label { font-size: 0.75rem; }
 }
 
 /* ── TEAM PHOTO AVATARS ── */
