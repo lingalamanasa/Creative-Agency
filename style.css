@@ -283,7 +283,7 @@ section { padding: 100px 0; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../images/hero_bg.png');
+  background-image: url('../images/hero_bg.webp');
   background-size: cover;
   background-position: center;
   opacity: 0.25;
