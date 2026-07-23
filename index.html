@@ -1099,19 +1099,26 @@
     gap: 48px;
   }
   .hero-right { order: -1; }
-  .hero-stats-card { max-width: 480px; margin: 0 auto; }
+  .hero-stats-card { width: 100%; max-width: 480px; margin: 0 auto; }
   .hero-v2-title { font-size: clamp(2.2rem, 6vw, 3.2rem); }
-  .hero-floating-badge { max-width: 480px; margin: 0 auto; }
+  .hero-floating-badge { width: 100%; max-width: 480px; margin: 0 auto; }
 }
 @media (max-width: 480px) {
   .hero-v2 { padding: 90px 0 70px; }
-  .hero-v2-title { font-size: 2.2rem; letter-spacing: -0.5px; }
+  .hero-v2-title { font-size: 2rem; letter-spacing: -0.5px; }
   .hero-pills { gap: 8px; }
   .hero-pill { font-size: 0.76rem; padding: 6px 12px; }
   .stat-row-num { font-size: 1.5rem; }
   .hero-stats-card { padding: 16px; width: 100%; max-width: 100%; overflow: hidden; }
   .stat-row { padding: 12px 14px; }
   .stat-row-label { font-size: 0.75rem; }
+  .quick-contact-form { flex-direction: column; }
+  .quick-contact-input { width: 100%; }
+  .quick-contact-btn { width: 100%; }
+  .hero-kicker { font-size: 0.74rem; padding: 6px 14px; }
+  .hero-v2-cta { flex-direction: column; gap: 12px; }
+  .btn-hero-primary, .btn-hero-secondary { width: 100%; justify-content: center; }
+  .hero-floating-badge { width: 100%; max-width: 100%; }
 }
 
 /* ── TEAM PHOTO AVATARS ── */
